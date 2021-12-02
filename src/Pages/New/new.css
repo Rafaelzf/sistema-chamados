@@ -1,0 +1,41 @@
+
+form textarea{
+  height: 105px;
+  resize: none;
+}
+
+form input[type="radio"]{
+  margin: 15px 0;
+}
+
+form input[type="radio"]:not(:first-child){
+  margin-left: 15px;
+}
+
+.status span{
+  padding-left: .5em;
+  font-size: 1.3em;
+}
+.form-profile label{
+  margin-bottom: .5em;
+  font-size: 1.4em;
+}
+
+.form-profile input, textarea, select{
+  margin-bottom: 1em;
+  padding: .7em;
+  border:0;
+  border-radius: 5px;
+  max-width: 600px;
+  border: 1px solid #d8d5e6;
+}
+
+.form-profile button{
+  max-width: 600px;
+}
+
+
+.disableButton {
+  cursor: not-allowed;
+  background-color: rgb(172, 160, 212);
+}
