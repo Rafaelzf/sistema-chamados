@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect, useContext, useCallback} from 'react';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
 import { useNavigate, useParams  } from 'react-router-dom';
@@ -86,8 +86,7 @@ const New = () => {
 
 
     //Chamado com ID no paramêtro URL
-    async function loadId(lista){
-
+    const loadId = useCallback(async (lista) => {
       const docRef = doc(db, 'chamados', id);
       const docSnap = await getDoc(docRef);
 
@@ -109,8 +108,10 @@ const New = () => {
       } else {
         toast.error('Chamado não existente.');
       }
-    
-    };
+    }, [id])
+
+      
+
 
   useEffect(() => {
 
@@ -145,7 +146,7 @@ const New = () => {
 
     };
     loadCustomers();
-  }, []);
+  }, [id, loadId]);
 
 
   
